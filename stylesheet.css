@@ -1,0 +1,231 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "Meiryo", "メイリオ", "ＭＳ ゴシック", "Osaka‐等幅";
+}
+
+/* ヘッダーについてのCSSここから */
+
+.header{
+  width: 100%;
+  height: 160px;
+  background-color: red;
+  padding: 40px 60px;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+}
+
+.title-main{
+  margin-top: 24px;
+  font-size: 40px;
+}
+
+.title-sub{
+  font-size: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #fff;
+}
+
+.btn-logout{
+  display: block;
+  width: 100px;
+  height: 30px;
+  background-color: #fff;
+  line-height: 30px;
+  color: red;
+  text-decoration: none;
+  border: 2px solid red;
+  border-radius: 5px;
+  position: fixed;
+  top: 30px;
+  right: 40px;
+}
+
+.btn-logout:hover{
+  opacity: 0.9;
+}
+
+/* メインについてのCSSここから */
+
+.main, .main-show, .main-login{
+  width: 100%;
+  height: calc(100vh - 520px);
+  padding: 20px 60px;
+  margin: auto;
+  color: #555;
+  text-align: center;
+  overflow: scroll;
+}
+
+.main::before{
+  content: "社員番号/社員名をClickして詳細へ";
+  display: block;
+  width: 280px;
+  height: 30px;
+  background-color: #fff;
+  border: solid 2px red;
+  border-radius: 5px;
+  color: red;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 30px;
+  position: fixed;
+  left: 70px;
+  top: 260px;
+}
+
+.main::after{
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid red;
+  position: fixed;
+  left: 100px;
+  top: 293px;
+} 
+
+.table-wrapper{
+  margin: 16px 0 50px;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  border: solid 2px #999;
+}
+
+.table-even{
+  background-color: #eee;
+}
+
+th, td{
+  padding: 10px;
+  border: solid 1px #999;
+}
+
+th{
+  background-color: yellow;
+}
+
+table a{
+  color: #555;
+  text-decoration: none;
+}
+
+.btn-new, .btn-sent{
+  display: block;
+  width: 200px;
+  height: 50px;
+  background-color: #fff;
+  margin: 40px auto;
+  color: deepskyblue;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 50px;
+  border: 2px solid deepskyblue;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn-new:hover, .btn-sent:hover{
+  opacity: 0.8;
+}
+
+.main-login{
+  font-weight: bold;
+}
+
+.input-text{
+  width: 350px;
+  height: 35px;
+  margin: 10px;
+  padding: 0 10px;
+  font: 20px;
+  border: solid 1px #999;
+  border-radius: 5px;
+}
+
+.btn-sent{
+  cursor: pointer;
+  line-height: 44px;
+}
+
+form::before, form::after{
+  content: "必須";
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background-color: yellow;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 20px;
+  border-radius: 3px;
+  position: relative;
+  left: -80px;
+  top: 23px;
+}
+
+form::after{
+  left: -80px;
+  top: -212px;
+}
+
+.main-login a{
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  margin: 5px 0px;
+  line-height: 30px;
+  color: red;
+  text-decoration: none;
+  border: 2px solid red;
+  border-radius: 3px;
+}
+
+.main-login a:hover{
+  opacity: 0.8;
+}
+
+/* メッセージについてのCSSここから */
+
+.msg{
+  width: 100%;
+  height: 100px;
+  background-color: red;
+  padding: 20px 60px 100px;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+
+.msg-title{
+  margin-bottom: 20px;
+  font-size: 19px;
+}
+
+span{
+  color: yellow;
+  font-size: 14px;
+}
+
+.msg a{
+  color: #fff;
+  text-decoration: none;
+}
+
+/* フッターについてのCSSここから */
+
+.footer{
+  width: 100%;
+  height: 20px;
+  background-color: #555;
+  padding: 20px 60px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}
