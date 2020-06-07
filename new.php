@@ -7,42 +7,52 @@
   </head>
 
   <body>
-    <div class="header">
-      <p class="title-main">『 NECO COMPANY 』<span class="title-sub">社員リスト</span></p>
-      <a class="btn-logout" href=login.php>ログアウト</a>
+    <div class="header color-main">
+      <h1 class="header__title-main">NECO COMPANY</h1>
+      <h2 class="header__title-sub">社員リスト</h2>
+      <a class="header__btn_logout btn-small" href=login.php>ログアウト</a>
     </div>
 
-    <div class="main">
-      <h2>社員一覧</h2>
-      <div class="table-wrapper">
-        <table border="1">
-          <?php
-            echo "<tr>";
-              for($i=0; $i<count($index); $i++) echo "<th>$index[$i]</th>";
-            echo "</tr>";
-
-            foreach($employees as $e){
-              echo "<tr>";
-                for($i=0; $i<=1; $i++) echo "<td><a href='#'>$e[$i]</a></td>";
-                for($i=2; $i<count($index); $i++) echo "<td>$e[$i]</td>";
-              echo "</tr>";
-            }
-          ?>
-        </table>
-      </div>
-      <a class="btn-new" href="#">新規登録</a>
+    <div class="main color-sub">
+      <h2>新規登録</h2>
+      <form method="post" action="index.php">
+        <div class="main__form-wrapper main__form-wrapper_flag">
+          <p class="main__form-wrapper_label">社員番号</p>
+          <input class="form" type="text" name="id" value="006">
+        </div>
+        <div class="main__form-wrapper main__form-wrapper_flag">
+          <p class="main__form-wrapper_label">社員名</p>
+          <p class="main__form-wrapper_label font-mini">氏名の間に半角スペースを入力してください（山田 太郎）</p>
+          <input class="form" type="text" name="name">
+        </div>
+        <div class="main__form-wrapper main__form-wrapper_flag">
+          <p class="main__form-wrapper_label">所属部門</p>
+          <select class="form form-select" name="belong">
+            <option value="介護職">介護職</option>
+            <option value="ITエンジニア職">ITエンジニア部</option>
+          </select>
+        </div>
+        <div class="main__form-wrapper main__form-wrapper_flag">
+          <p class="main__form-wrapper_label">連絡先</p>
+          <p class="main__form-wrapper_label font-mini">半角ハイフンを入力してください（090-####-###）</p>
+          <input class="form" type="text" name="tel">
+        </div>
+        <div class="main__form-wrapper main__form-wrapper_flag">
+          <p class="main__form-wrapper_label">入社日</p>
+          <p class="main__form-wrapper_label font-mini">半角スラッシュを入力してください（2020/4/1）</p>
+          <input class="form" type="text" name="enter">
+        </div>
+        <div class="main__form-wrapper form-wrapper-last">
+          <p class="main__form-wrapper_label">備考</p>
+          <p class="main__form-wrapper_caution font-mini"></p>
+          <textarea class="form form-textarea" name="remark"></textarea>
+        </div>
+        <input class="main__btn_link btn-large color-accent" type="submit" value="登録">
+      </form>
     </div>
 
-    <div class="msg">
-      <p class="msg-title">新規登録 社員<span>New!!</span></p>
-      <?php
-        for($i=1; $i<=2; $i++){
-          $last_e_name = $employees[(count($employees)-$i)][1];
-          echo "<p><a href='#'>$last_e_name</a></p>";
-        }
-      ?>
-    </div>
+    <div class="msg color-main"></div>
 
-    <div class="footer">Copyright ©️NECO. All Rights Reserved.</div>
+    <div class="footer color-sub font-mini">Copyright ©️NECO. All Rights Reserved.</div>
   </body>
 </html>

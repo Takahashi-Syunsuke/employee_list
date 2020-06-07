@@ -1,231 +1,258 @@
+/* 
+CSS記述について
+分類
+block     使い回すパーツ
+element   blockを構成し、blockの外では使わないもの
+modifier  見た目や振る舞い
+
+ネスト
+elementの中にelementを記述しない
+
+命名規則
+block__element_modifier
+block__element_modifier_modifier
+2つの単語から成る場合は"-"で区切る
+
+mix
+組み合わせの推奨
+*/
+
+/* blockについての記述 */
 *{
   padding: 0;
   margin: 0;
-  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "Meiryo", "メイリオ", "ＭＳ ゴシック", "Osaka‐等幅";
 }
 
-/* ヘッダーについてのCSSここから */
+.header, .main, .msg, .footer{
+  width: calc(100% - 120px);
+  padding-right: 60px;
+  padding-left: 60px;
+  text-align: center;
+}
 
 .header{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+.main{
+  min-height: calc(100vh - 307px);
+}
+
+.main, .msg{
+  padding-top: 30px;
+  padding-bottom:30px;
+}
+
+.footer{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* elementについての記述 */
+.btn-small{
+  display: block;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-large{
+  display: block;
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover{
+  opacity: 0.8;
+}
+
+.table{
   width: 100%;
-  height: 160px;
-  background-color: red;
-  padding: 40px 60px;
-  color: #fff;
-  text-align: center;
-  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom:20px;
+  border-collapse: collapse;
 }
 
-.title-main{
-  margin-top: 24px;
-  font-size: 40px;
+.th, .td{
+  padding: 10px;
 }
 
-.title-sub{
-  font-size: 30px;
+.header__title-main{
+  padding-top: 24px;
+}
+
+.header__title-sub{
   padding-bottom: 10px;
   border-bottom: 1px solid #fff;
 }
 
-.btn-logout{
-  display: block;
-  width: 100px;
-  height: 30px;
-  background-color: #fff;
-  line-height: 30px;
-  color: red;
-  text-decoration: none;
-  border: 2px solid red;
-  border-radius: 5px;
-  position: fixed;
-  top: 30px;
-  right: 40px;
+input{
+  border: none;
 }
 
-.btn-logout:hover{
-  opacity: 0.9;
-}
-
-/* メインについてのCSSここから */
-
-.main, .main-show, .main-login{
-  width: 100%;
-  height: calc(100vh - 520px);
-  padding: 20px 60px;
-  margin: auto;
+.form{
+  width: 350px;
+  height: 26px;
+  padding: 5px 10px;
+  margin: 10px 15px 0;
   color: #555;
-  text-align: center;
-  overflow: scroll;
+  border: 1px solid #999;
+  border-radius: 5px;
 }
 
-.main::before{
+.form-select{
+  width: 370px;
+  height: 36px;
+}
+
+.form-textarea{
+  height: 84px;
+}
+
+.main__form-wrapper{
+  width: 450px;
+  padding: 50px 0;
+  margin: 0 auto;
+  border-bottom: 1px solid #999;
+  position: relative;
+}
+
+.form-wrapper-last{
+  padding-bottom: 50px;
+  border: none;
+}
+
+.main__form-wrapper-login{
+  margin: 40px;
+}
+
+.msg__title{
+  margin-bottom: 10px;
+}
+
+/* modifierについての記述 */
+*{
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "Meiryo", "メイリオ", "ＭＳ ゴシック", "Osaka‐等幅";
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.font-mini{
+  font-size: 12px;
+}
+
+.color-main{
+  background: -moz-linear-gradient(65deg, #F13F79, #FFC778); 
+  background: -webkit-linear-gradient(65deg, #F13F79, #FFC778); 
+  background: linear-gradient(25deg, #F13F79, #FFC778);
+  color: #fff;
+}
+
+.color-sub{
+  background-color: #f8f8ff;
+  color: #7b68ee;
+}
+
+.color-accent{
+  background: -moz-linear-gradient(65deg, #8a2be2, #00bfff); 
+  background: -webkit-linear-gradient(65deg, #8a2be2, #00bfff); 
+  background: linear-gradient(25deg, #8a2be2, #00bfff);
+  color: #fff;
+}
+
+.color-main a, .color-sub a, .color-accent a{
+  color: #fff;
+}
+
+.header__btn_logout{
+  border: 3px solid #fff;
+  position: absolute;
+  top: 40px;
+  right: 60px;
+}
+
+.main__table_decoration {
+  background-color: #fff;
+}
+
+.main__table_th{
+  background-color: #ff69b4;
+  border: solid 1px #fff;
+  color: #fff;
+}
+
+.main__table_td{
+  border: dashed 1px #ff69b4;
+}
+
+.main__table_td, .main__table_td a{
+  color: #555;
+}
+
+.main__btn_link{
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 20px;
+}
+
+.main__form-wrapper_label{
+  display: block;
+  width: 370px;
+  margin: auto;
+  padding-left: 90px;
+  text-align: left;
+}
+
+.main__form-wrapper-login_item{
+  padding-bottom: 20px;
+}
+
+/* その他、疑似要素などについての記述 */
+.main__flag::before{
   content: "社員番号/社員名をClickして詳細へ";
   display: block;
   width: 280px;
   height: 30px;
   background-color: #fff;
-  border: solid 2px red;
-  border-radius: 5px;
-  color: red;
+  color: #F13F79;
   font-size: 15px;
-  font-weight: bold;
   line-height: 30px;
-  position: fixed;
+  border: solid 2px #F13F79;
+  border-radius: 5px;
+  position: absolute;
+  top: 240px;
   left: 70px;
-  top: 260px;
 }
 
-.main::after{
+.main__flag::after{
   content: "";
-  width: 0;
-  height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-top: 8px solid red;
-  position: fixed;
+  border-top: 8px solid #F13F79;
+  position: absolute;
+  top: 273px;
   left: 100px;
-  top: 293px;
-} 
-
-.table-wrapper{
-  margin: 16px 0 50px;
 }
 
-table{
-  width: 100%;
-  border-collapse: collapse;
-  border: solid 2px #999;
-}
-
-.table-even{
-  background-color: #eee;
-}
-
-th, td{
-  padding: 10px;
-  border: solid 1px #999;
-}
-
-th{
-  background-color: yellow;
-}
-
-table a{
-  color: #555;
-  text-decoration: none;
-}
-
-.btn-new, .btn-sent{
-  display: block;
-  width: 200px;
-  height: 50px;
-  background-color: #fff;
-  margin: 40px auto;
-  color: deepskyblue;
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 50px;
-  border: 2px solid deepskyblue;
-  border-radius: 5px;
-  text-decoration: none;
-}
-
-.btn-new:hover, .btn-sent:hover{
-  opacity: 0.8;
-}
-
-.main-login{
-  font-weight: bold;
-}
-
-.input-text{
-  width: 350px;
-  height: 35px;
-  margin: 10px;
-  padding: 0 10px;
-  font: 20px;
-  border: solid 1px #999;
-  border-radius: 5px;
-}
-
-.btn-sent{
-  cursor: pointer;
-  line-height: 44px;
-}
-
-form::before, form::after{
+.main__form-wrapper_flag::before{
   content: "必須";
-  display: inline-block;
-  width: 40px;
-  height: 20px;
-  background-color: yellow;
-  font-size: 12px;
-  font-weight: normal;
-  line-height: 20px;
-  border-radius: 3px;
-  position: relative;
-  left: -80px;
-  top: 23px;
-}
-
-form::after{
-  left: -80px;
-  top: -212px;
-}
-
-.main-login a{
-  display: inline-block;
-  width: 100px;
-  height: 30px;
-  margin: 5px 0px;
-  line-height: 30px;
-  color: red;
-  text-decoration: none;
-  border: 2px solid red;
-  border-radius: 3px;
-}
-
-.main-login a:hover{
-  opacity: 0.8;
-}
-
-/* メッセージについてのCSSここから */
-
-.msg{
-  width: 100%;
-  height: 100px;
-  background-color: red;
-  padding: 20px 60px 100px;
+  display: block;
+  width: 26px;
+  height: 12px;
+  background-color: #F13F79;
+  padding: 5px;
+  font-size: 10px;
+  line-height: 12px;
+  border-radius: 5px;
   color: #fff;
-  font-weight: bold;
-  text-align: center;
-}
-
-.msg-title{
-  margin-bottom: 20px;
-  font-size: 19px;
-}
-
-span{
-  color: yellow;
-  font-size: 14px;
-}
-
-.msg a{
-  color: #fff;
-  text-decoration: none;
-}
-
-/* フッターについてのCSSここから */
-
-.footer{
-  width: 100%;
-  height: 20px;
-  background-color: #555;
-  padding: 20px 60px;
-  color: #fff;
-  font-size: 14px;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
+  position: absolute;
+  top: 52px;
+  left: 40px;
 }
