@@ -1,0 +1,258 @@
+/* 
+CSS記述について
+分類
+block     使い回すパーツ
+element   blockを構成し、blockの外では使わないもの
+modifier  見た目や振る舞い
+
+ネスト
+elementの中にelementを記述しない
+
+命名規則
+block__element_modifier
+block__element_modifier_modifier
+2つの単語から成る場合は"-"で区切る
+
+mix
+組み合わせの推奨
+*/
+
+/* blockについての記述 */
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.header, .main, .msg, .footer{
+  width: calc(100% - 120px);
+  padding-right: 60px;
+  padding-left: 60px;
+  text-align: center;
+}
+
+.header{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+.main{
+  min-height: calc(100vh - 307px);
+}
+
+.main, .msg{
+  padding-top: 30px;
+  padding-bottom:30px;
+}
+
+.footer{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* elementについての記述 */
+.btn-small{
+  display: block;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-large{
+  display: block;
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover{
+  opacity: 0.8;
+}
+
+.table{
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom:20px;
+  border-collapse: collapse;
+}
+
+.th, .td{
+  padding: 10px;
+}
+
+.header__title-main{
+  padding-top: 24px;
+}
+
+.header__title-sub{
+  padding-bottom: 10px;
+  border-bottom: 1px solid #fff;
+}
+
+input{
+  border: none;
+}
+
+.form{
+  width: 350px;
+  height: 26px;
+  padding: 5px 10px;
+  margin: 10px 15px 0;
+  color: #555;
+  border: 1px solid #999;
+  border-radius: 5px;
+}
+
+.form-select{
+  width: 370px;
+  height: 36px;
+}
+
+.form-textarea{
+  height: 84px;
+}
+
+.main__form-wrapper{
+  width: 450px;
+  padding: 50px 0;
+  margin: 0 auto;
+  border-bottom: 1px solid #999;
+  position: relative;
+}
+
+.form-wrapper-last{
+  padding-bottom: 50px;
+  border: none;
+}
+
+.main__form-wrapper-login{
+  margin: 40px;
+}
+
+.msg__title{
+  margin-bottom: 10px;
+}
+
+/* modifierについての記述 */
+*{
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "Meiryo", "メイリオ", "ＭＳ ゴシック", "Osaka‐等幅";
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.font-mini{
+  font-size: 12px;
+}
+
+.color-main{
+  background: -moz-linear-gradient(65deg, #F13F79, #FFC778); 
+  background: -webkit-linear-gradient(65deg, #F13F79, #FFC778); 
+  background: linear-gradient(25deg, #F13F79, #FFC778);
+  color: #fff;
+}
+
+.color-sub{
+  background-color: #f8f8ff;
+  color: #7b68ee;
+}
+
+.color-accent{
+  background: -moz-linear-gradient(65deg, #8a2be2, #00bfff); 
+  background: -webkit-linear-gradient(65deg, #8a2be2, #00bfff); 
+  background: linear-gradient(25deg, #8a2be2, #00bfff);
+  color: #fff;
+}
+
+.color-main a, .color-sub a, .color-accent a{
+  color: #fff;
+}
+
+.header__btn_logout{
+  border: 3px solid #fff;
+  position: absolute;
+  top: 40px;
+  right: 60px;
+}
+
+.main__table_decoration {
+  background-color: #fff;
+}
+
+.main__table_th{
+  background-color: #ff69b4;
+  border: solid 1px #fff;
+  color: #fff;
+}
+
+.main__table_td{
+  border: dashed 1px #ff69b4;
+}
+
+.main__table_td, .main__table_td a{
+  color: #555;
+}
+
+.main__btn_link{
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 20px;
+}
+
+.main__form-wrapper_label{
+  display: block;
+  width: 370px;
+  margin: auto;
+  padding-left: 90px;
+  text-align: left;
+}
+
+.main__form-wrapper-login_item{
+  padding-bottom: 20px;
+}
+
+/* その他、疑似要素などについての記述 */
+.main__flag::before{
+  content: "社員番号/社員名をClickして詳細へ";
+  display: block;
+  width: 280px;
+  height: 30px;
+  background-color: #fff;
+  color: #F13F79;
+  font-size: 15px;
+  line-height: 30px;
+  border: solid 2px #F13F79;
+  border-radius: 5px;
+  position: absolute;
+  top: 240px;
+  left: 70px;
+}
+
+.main__flag::after{
+  content: "";
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #F13F79;
+  position: absolute;
+  top: 273px;
+  left: 100px;
+}
+
+.main__form-wrapper_flag::before{
+  content: "必須";
+  display: block;
+  width: 26px;
+  height: 12px;
+  background-color: #F13F79;
+  padding: 5px;
+  font-size: 10px;
+  line-height: 12px;
+  border-radius: 5px;
+  color: #fff;
+  position: absolute;
+  top: 52px;
+  left: 40px;
+}
