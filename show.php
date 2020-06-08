@@ -3,6 +3,7 @@
   <head>
     <title>社員リスト</title>
     <link rel="stylesheet" type="text/css" href="/stylesheet.css">
+    <script src="/jquery-3.5.1.min.js"></script>
     <script src="/script.js"></script>
   </head>
 
@@ -41,13 +42,14 @@
           <td class="main__table_td td">大宮駅</td>
         </tr>
       </table>
-      <a class="main__btn_link btn-large color-accent" href="index.php">トップへ</a>
+      <a class="main__btn_link btn-large color-accent" href="#">変更する</a>
     </div>
 
     <div class="msg color-main">
       <h4 class="msg__title">スキル</h4>
       <p class="msg__item">PHP</p>
       <p class="msg__item">Ruby</p>
+      <a class="msg__item_btn btn-circle" href="index.php">TOPへ</a>
     </div>
 
     <div class="footer color-sub font-mini">Copyright ©️NECO. All Rights Reserved.</div>

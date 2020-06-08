@@ -69,14 +69,21 @@ mix
   cursor: pointer;
 }
 
-.btn:hover{
+.btn-circle{
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  border-radius: 50px;
+}
+
+.btn-small:hover, .btn-large:hover, .btn-circle:hover{
   opacity: 0.8;
 }
 
 .table{
   width: 100%;
   margin-top: 20px;
-  margin-bottom:20px;
+  margin-bottom:40px;
   border-collapse: collapse;
 }
 
@@ -101,7 +108,7 @@ input{
   width: 350px;
   height: 26px;
   padding: 5px 10px;
-  margin: 10px 15px 0;
+  margin: 10px 15px;
   color: #555;
   border: 1px solid #999;
   border-radius: 5px;
@@ -137,6 +144,13 @@ input{
   margin-bottom: 10px;
 }
 
+.main__btn-msg{
+  width: 370px;
+  height: 40px;
+  margin: 0 auto 20px;
+  line-height: 40px;
+}
+
 /* modifierについての記述 */
 *{
   font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "Meiryo", "メイリオ", "ＭＳ ゴシック", "Osaka‐等幅";
@@ -144,7 +158,16 @@ input{
   text-decoration: none;
 }
 
+.hidden{
+  display: none;
+}
+
 .font-mini{
+  font-size: 12px;
+}
+
+.font-error{
+  color: #F13F79;
   font-size: 12px;
 }
 
@@ -192,8 +215,8 @@ input{
   border: dashed 1px #ff69b4;
 }
 
-.main__table_td, .main__table_td a{
-  color: #555;
+.main__table_td a{
+  color: #7b68ee;
 }
 
 .main__btn_link{
@@ -214,6 +237,15 @@ input{
   padding-bottom: 20px;
 }
 
+.msg__item_btn{
+  background: -moz-linear-gradient(#8a2be2, #00bfff); 
+  background: -webkit-linear-gradient(#8a2be2, #00bfff); 
+  background: linear-gradient(#8a2be2, #00bfff);
+  position: fixed;
+  bottom: 50px;
+  right: 60px;
+}
+
 /* その他、疑似要素などについての記述 */
 .main__flag::before{
   content: "社員番号/社員名をClickして詳細へ";
@@ -221,13 +253,13 @@ input{
   width: 280px;
   height: 30px;
   background-color: #fff;
-  color: #F13F79;
+  color: #7b68ee;
   font-size: 15px;
   line-height: 30px;
-  border: solid 2px #F13F79;
+  border: solid 3px #7b68ee;
   border-radius: 5px;
   position: absolute;
-  top: 240px;
+  top: 230px;
   left: 70px;
 }
 
@@ -235,9 +267,9 @@ input{
   content: "";
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-top: 8px solid #F13F79;
+  border-top: 8px solid #7b68ee;
   position: absolute;
-  top: 273px;
+  top: 263px;
   left: 100px;
 }
 
