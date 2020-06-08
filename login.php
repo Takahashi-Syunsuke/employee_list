@@ -3,6 +3,7 @@
   <head>
     <title>社員リスト</title>
     <link rel="stylesheet" type="text/css" href="/stylesheet.css">
+    <script src="/jquery-3.5.1.min.js"></script>
     <script src="/script.js"></script>
   </head>
 
